@@ -1,0 +1,52 @@
+{
+  "user": [
+    {
+      "id": 0,
+      "uAvatar": "/static/images/uAvatar.jpg",
+      "uBirthday": "20/4/96",
+      "uName": "Vanessa Boyer",
+      "uGender": "female",
+      "uEmail": "vanessaboyer@genekom.com",
+      "uPhone": "136456780",
+      "uAddress": "Nettie, Virginia, 5031",
+      "uAutograph": "Ut excepteur consequat duis adipisicing ad elit.",
+      "uAbout": "Esse esse pariatur sint irure fugiat anim anim magna irure qui. Sit nostrud veniam laboris ipsum voluptate ipsum dolore esse eiusmod sunt duis commodo ad. Dolor commodo Lorem proident excepteur quis magna proident duis adipisicing ea anim veniam aliquip ullamco. Ipsum fugiat Lorem id duis consequat aliquip proident aliquip in duis adipisicing. Qui ad est qui laborum reprehenderit occaecat nisi ad qui ullamco non.\r\n"
+    },
+    {
+      "id": 1,
+      "uAvatar": "/static/images/uAvatar1.jpg",
+      "uBirthday": "11/3/95",
+      "uName": "Pate Tran",
+      "uGender": "female",
+      "uEmail": "patetran@genekom.com",
+      "uPhone": "178412313",
+      "uAddress": "North Carolina, 2584",
+      "uAutograph": "Dolore ea cupidatat deserunt nostrud officia est ",
+      "uAbout": "Ullamco amet velit esse et duis deserunt ex in non eiusmod. Amet anim nisi aliqua minim aute consectetur amet fugiat labore in deserunt duis sunt. Deserunt tempor dolor in adipisicing irure magna in dolor magna exercitation Lorem et Lorem velit. Elit quis et proident ad aliquip qui aute anim eu minim deserunt excepteur. Mollit commodo sunt esse aute do. Quis non nisi id incididunt exercitation sint exercitation.\r\n"
+    },
+    {
+      "id": 2,
+      "uAvatar": "/static/images/uAvatar2.jpg",
+      "uBirthday": "21/6/97",
+      "uName": "Cardenas Burnett",
+      "uGender": "female",
+      "uEmail": "cardenasburnett@genekom.com",
+      "uPhone": "135523432",
+      "uAddress": "Salix, Delaware, 442",
+      "uAutograph": "Ipsum sit cupidatat dolore voluptate.",
+      "uAbout": "Ea laboris magna ex nisi Lorem anim sint excepteur. Amet nostrud proident dolore ad enim amet ipsum deserunt fugiat duis nisi tempor. Ex id amet duis do nostrud deserunt fugiat. Velit reprehenderit nulla exercitation minim pariatur deserunt do nulla enim Lorem laboris nisi labore incididunt. Laboris proident aliquip in proident cupidatat eiusmod sint nisi sit. Mollit qui pariatur ut exercitation mollit cupidatat. Ad ex cillum voluptate consequat laboris cupidatat.\r\n"
+    },
+    {
+      "id": 3,
+      "uAvatar": "/static/images/uAvatar3.jpg",
+      "uBirthday": "3/3/99",
+      "uName": "Imelda Horne",
+      "uGender": "female",
+      "uEmail": "imeldahorne@genekom.com",
+      "uPhone": "1581234219",
+      "uAddress": "Coldiron, Palau, 7757",
+      "uAutograph": "Voluptate ad fugiat magna ut cupidatat",
+      "uAbout": "Irure consectetur do ea ea ex proident laborum ex dolore incididunt mollit fugiat. Lorem minim adipisicing labore cillum velit adipisicing. Laboris laboris proident esse deserunt enim exercitation eu qui pariatur excepteur ad Lorem enim veniam.\r\n"
+    }
+  ]
+}

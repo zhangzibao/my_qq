@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: myqq 服务端restful api
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: 张自爆
+Implementation-Vendor-Id: springboot
+Created-By: IntelliJ IDEA
+Build-Jdk: 11
+Main-Class: ${start-class}
+

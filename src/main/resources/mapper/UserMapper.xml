@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.my_qq.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.springboot.my_qq.model.User">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="u_avatar" jdbcType="VARCHAR" property="uAvatar" />
+        <result column="u_birthday" jdbcType="VARCHAR" property="uBirthday" />
+        <result column="u_name" jdbcType="VARCHAR" property="uName" />
+        <result column="u_gender" jdbcType="VARCHAR" property="uGender" />
+        <result column="u_email" jdbcType="VARCHAR" property="uEmail" />
+        <result column="u_phone" jdbcType="INTEGER" property="uPhone" />
+        <result column="u_address" jdbcType="VARCHAR" property="uAddress" />
+        <result column="u_autograph" jdbcType="VARCHAR" property="uAutograph" />
+        <result column="u_about" jdbcType="VARCHAR" property="uAbout" />
+        <result column="u_password" jdbcType="VARCHAR" property="uPassword" />
+        <result column="nick_name" jdbcType="VARCHAR" property="Nickname" />
+        <result column="open_id" jdbcType="VARCHAR" property="OpenId" />
+
+    </resultMap>
+    <select id="findAllUser" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select distinct * from user where u_name = #{username,jdbcType=VARCHAR}  or nick_name = #{username,jdbcType=VARCHAR}
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select * from user where id = #{id,jdbcType=INTEGER}
+    </select>
+    <!--通过用户名寻找用户密码-->
+    <select id="find_password" parameterType="java.lang.String" resultType="java.lang.String">
+        select u_password
+        from user
+        where u_name = #{username,jdbcType=VARCHAR}
+    </select>
+    <select id="get_user_id_by_openId" parameterType="java.lang.String" resultType="java.lang.String">
+        select id
+        from user
+        where open_id = #{open_id,jdbcType=VARCHAR}
+    </select>
+    <!--通过用户名获取用户id-->
+    <select id="get_user_id" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select id
+        from user
+        where u_name = #{username,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from user
+        where id = #{username,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.springboot.my_qq.model.User">
+        insert into user (id,
+        u_avatar,
+        u_birthday,
+        u_name,
+        u_gender,
+        u_email,
+        u_phone,
+        u_address,
+        u_autograph,
+        u_about,
+        u_password)
+        values (#{id,jdbcType=INTEGER},
+        #{uAvatar,jdbcType=VARCHAR},
+        #{uBirthday,jdbcType=VARCHAR},
+        #{uName,jdbcType=VARCHAR},
+        #{uGender,jdbcType=VARCHAR},
+        #{uEmail,jdbcType=VARCHAR},
+        #{uPhone,jdbcType=INTEGER},
+        #{uAddress,jdbcType=VARCHAR},
+        #{uAutograph,jdbcType=VARCHAR},
+        #{uAbout,jdbcType=VARCHAR},
+        #{uPassword,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.springboot.my_qq.model.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="uAvatar != null">
+                u_avatar,
+            </if>
+            <if test="uBirthday != null">
+                u_birthday,
+            </if>
+            <if test="uName != null">
+                u_name,
+            </if>
+            <if test="uGender != null">
+                u_gender,
+            </if>
+            <if test="uEmail != null">
+                u_email,
+            </if>
+            <if test="uPhone != null">
+                u_phone,
+            </if>
+            <if test="uAddress != null">
+                u_address,
+            </if>
+            <if test="uAutograph != null">
+                u_autograph,
+            </if>
+            <if test="uAbout != null">
+                u_about,
+            </if>
+            <if test="uPassword != null">
+                u_password,
+            </if>
+            <if test="Nickname != null">
+                nick_name,
+            </if>
+            <if test="OpenId != null">
+                open_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="uAvatar != null">
+                #{uAvatar,jdbcType=VARCHAR},
+            </if>
+            <if test="uBirthday != null">
+                #{uBirthday,jdbcType=VARCHAR},
+            </if>
+            <if test="uName != null">
+                #{uName,jdbcType=VARCHAR},
+            </if>
+            <if test="uGender != null">
+                #{uGender,jdbcType=VARCHAR},
+            </if>
+            <if test="uEmail != null">
+                #{uEmail,jdbcType=VARCHAR},
+            </if>
+            <if test="uPhone != null">
+                #{uPhone,jdbcType=INTEGER},
+            </if>
+            <if test="uAddress != null">
+                #{uAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="uAutograph != null">
+                #{uAutograph,jdbcType=VARCHAR},
+            </if>
+            <if test="uAbout != null">
+                #{uAbout,jdbcType=VARCHAR},
+            </if>
+            <if test="uPassword != null">
+                #{uPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="Nickname != null">
+                #{Nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="OpenId != null">
+                #{OpenId,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.springboot.my_qq.model.User">
+        update user
+        <set>
+            <if test="uAvatar != null">
+                u_avatar = #{uAvatar,jdbcType=VARCHAR},
+            </if>
+            <if test="uBirthday != null">
+                u_birthday = #{uBirthday,jdbcType=VARCHAR},
+            </if>
+            <if test="uName != null">
+                u_name = #{uName,jdbcType=VARCHAR},
+            </if>
+            <if test="uGender != null">
+                u_gender = #{uGender,jdbcType=VARCHAR},
+            </if>
+            <if test="uEmail != null">
+                u_email = #{uEmail,jdbcType=VARCHAR},
+            </if>
+            <if test="uPhone != null">
+                u_phone = #{uPhone,jdbcType=INTEGER},
+            </if>
+            <if test="uAddress != null">
+                u_address = #{uAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="uAutograph != null">
+                u_autograph = #{uAutograph,jdbcType=VARCHAR},
+            </if>
+            <if test="uAbout != null">
+                u_about = #{uAbout,jdbcType=VARCHAR},
+            </if>
+            <if test="uPassword != null">
+                u_password = #{uPassword,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.springboot.my_qq.model.User">
+        update user
+        set u_avatar = #{uAvatar,jdbcType=VARCHAR},
+        u_birthday = #{uBirthday,jdbcType=VARCHAR},
+        u_name = #{uName,jdbcType=VARCHAR},
+        u_gender = #{uGender,jdbcType=VARCHAR},
+        u_email = #{uEmail,jdbcType=VARCHAR},
+        u_phone = #{uPhone,jdbcType=INTEGER},
+        u_address = #{uAddress,jdbcType=VARCHAR},
+        u_autograph = #{uAutograph,jdbcType=VARCHAR},
+        u_about = #{uAbout,jdbcType=VARCHAR},
+        u_password = #{uPassword,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

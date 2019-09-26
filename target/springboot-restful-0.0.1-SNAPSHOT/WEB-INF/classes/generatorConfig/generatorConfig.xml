@@ -1,0 +1,44 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE generatorConfiguration-->
+        <!--PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"-->
+        <!--"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">-->
+<!--<generatorConfiguration>-->
+    <!--&lt;!&ndash; classPathEntry用于设置数据库驱动包位置&ndash;&gt;-->
+<!--<classPathEntry location="C:\Users\10787\.m2\repository\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar"/>-->
+<!--&lt;!&ndash; targetRuntime：代码生成目标，默认是MyBatis3&ndash;&gt;-->
+<!--<context id="DB2Tables" targetRuntime="MyBatis3">-->
+    <!--<commentGenerator>-->
+        <!--<property name="suppressAllComments" value="true"/>-->
+    <!--</commentGenerator>-->
+    <!--&lt;!&ndash; 数据库连接的信息 ok &ndash;&gt;-->
+    <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://120.79.44.150:3306/chat" userId="root" password="0F03d8efe739">-->
+    <!--</jdbcConnection>-->
+    <!--&lt;!&ndash; 解决数据转换问题 ok&ndash;&gt;-->
+    <!--<javaTypeResolver>-->
+        <!--&lt;!&ndash;是否强制使用BigDecimal来表示所有的十进制和数值字段。&ndash;&gt;-->
+        <!--<property name="forceBigDecimals" value="false" />-->
+    <!--</javaTypeResolver>-->
+    <!--&lt;!&ndash;生成模型的包名和位置&ndash;&gt;-->
+    <!--<javaModelGenerator targetPackage="com.springboot.my_qq.model" targetProject="G:\java_workspace\my_qq\src\main\java">-->
+        <!--<property name="enableSubPackages" value="true" />-->
+        <!--<property name="trimStrings" value="true" />-->
+    <!--</javaModelGenerator>-->
+    <!--&lt;!&ndash;生成的映射文件包名和位置&ndash;&gt;-->
+    <!--<sqlMapGenerator targetPackage="main/resources/mapper" targetProject="G:\java_workspace\my_qq\src">-->
+        <!--<property name="enableSubPackages" value="true" />-->
+    <!--</sqlMapGenerator>-->
+    <!--&lt;!&ndash;生成DAO的包名和位置&ndash;&gt;-->
+    <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.springboot.my_qq.dao" targetProject="G:\java_workspace\my_qq\src\main\java">-->
+        <!--<property name="enableSubPackages" value="true" />-->
+    <!--</javaClientGenerator>-->
+    <!--&lt;!&ndash;要生成那些文件&ndash;&gt;-->
+    <!--<table tableName="add_friend" domainObjectName="AddFriend"  enableCountByExample="false" enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+    <!--<table tableName="user" domainObjectName="User"  enableCountByExample="false" enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+    <!--<table tableName="friends" domainObjectName="Friend"  enableCountByExample="false" enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+    <!--<table tableName="messages" domainObjectName="Message"  enableCountByExample="false" enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+<!--</context>-->
+<!--</generatorConfiguration>-->

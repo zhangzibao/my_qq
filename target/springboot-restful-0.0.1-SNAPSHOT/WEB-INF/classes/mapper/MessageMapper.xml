@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.my_qq.dao.MessageMapper">
+    <resultMap id="BaseResultMap" type="com.springboot.my_qq.model.Message">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="friend_id" jdbcType="INTEGER" property="friendId"/>
+        <result column="add_time" jdbcType="TIMESTAMP" property="addTime"/>
+        <result column="isreceive" jdbcType="BIT" property="isreceive"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.springboot.my_qq.model.Message">
+        <result column="message_content" jdbcType="LONGVARCHAR" property="messageContent"/>
+    </resultMap>
+    <resultMap id="MessageMap" type="com.springboot.my_qq.model.UserMessage">
+        <id column="friend_id" property="friendId"/>
+        <collection column="list" ofType="com.springboot.my_qq.model.ListMessage" property="list">
+            <result column="add_time" jdbcType="TIMESTAMP" property="addTime"/>
+            <result column="isreceive" jdbcType="BIT" property="isreceive"/>
+            <result column="message_content" jdbcType="LONGVARCHAR" property="messageContent"/>
+        </collection>
+    </resultMap>
+    <select id="message_queue" parameterType="java.lang.Integer" resultMap="MessageMap">
+        select friend_id, add_time, isreceive, message_content
+        from messages
+        where user_id = #{user_id,jdbcType=INTEGER}
+    </select>
+
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select id, user_id, friend_id, add_time, isreceive, message_content
+        from messages
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from messages
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.springboot.my_qq.model.Message">
+        insert into messages (id, user_id, friend_id, add_time, isreceive, message_content)
+        values (#{id,jdbcType=INTEGER},
+        #{userId,jdbcType=INTEGER},
+        #{friendId,jdbcType=INTEGER},
+        #{addTime,jdbcType=TIMESTAMP},
+        #{isreceive,jdbcType=BIT},
+        #{messageContent,jdbcType=LONGVARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.springboot.my_qq.model.Message">
+        insert into messages
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="friendId != null">
+                friend_id,
+            </if>
+            <if test="addTime != null">
+                add_time,
+            </if>
+            <if test="isreceive != null">
+                isreceive,
+            </if>
+            <if test="messageContent != null">
+                message_content,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="friendId != null">
+                #{friendId,jdbcType=INTEGER},
+            </if>
+            <if test="addTime != null">
+                #{addTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="isreceive != null">
+                #{isreceive,jdbcType=BIT},
+            </if>
+            <if test="messageContent != null">
+                #{messageContent,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.springboot.my_qq.model.Message">
+        update messages
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="friendId != null">
+                friend_id = #{friendId,jdbcType=INTEGER},
+            </if>
+            <if test="addTime != null">
+                add_time = #{addTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="isreceive != null">
+                isreceive = #{isreceive,jdbcType=BIT},
+            </if>
+            <if test="messageContent != null">
+                message_content = #{messageContent,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.springboot.my_qq.model.Message">
+        update messages
+        set user_id = #{userId,jdbcType=INTEGER},
+        friend_id = #{friendId,jdbcType=INTEGER},
+        add_time = #{addTime,jdbcType=TIMESTAMP},
+        isreceive = #{isreceive,jdbcType=BIT},
+        message_content = #{messageContent,jdbcType=LONGVARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.springboot.my_qq.model.Message">
+        update messages
+        set user_id = #{userId,jdbcType=INTEGER},
+        friend_id = #{friendId,jdbcType=INTEGER},
+        add_time = #{addTime,jdbcType=TIMESTAMP},
+        isreceive = #{isreceive,jdbcType=BIT}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>
