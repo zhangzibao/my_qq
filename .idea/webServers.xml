@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="ba13b071-3086-4b0c-98f8-d945a4358d74" name="my_qq" url="http://zhangzibao.xyz">
-        <fileTransfer host="zhangzibao.xyz" port="22" rootFolder="/root" accessType="SFTP">
+      <webServer id="ba13b071-3086-4b0c-98f8-d945a4358d74" name="my_qq" url="http://62.234.52.11">
+        <fileTransfer host="62.234.52.11" port="22" privateKey="E:\张自爆\配置文件\腾讯云密钥\root" rootFolder="/root/Projects/MyQq" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
