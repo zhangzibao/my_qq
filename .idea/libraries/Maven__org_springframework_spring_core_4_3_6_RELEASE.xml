@@ -6,7 +6,6 @@
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.6.RELEASE/spring-core-4.3.6.RELEASE-javadoc.jar!/" />
     </JAVADOC>
-    <MATHEMATICA_LIBRARY />
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.6.RELEASE/spring-core-4.3.6.RELEASE-sources.jar!/" />
     </SOURCES>

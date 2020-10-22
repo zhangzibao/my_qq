@@ -6,7 +6,6 @@
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.11/tomcat-embed-core-8.5.11-javadoc.jar!/" />
     </JAVADOC>
-    <MATHEMATICA_LIBRARY />
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.11/tomcat-embed-core-8.5.11-sources.jar!/" />
     </SOURCES>

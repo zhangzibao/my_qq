@@ -6,7 +6,6 @@
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.8.6/jackson-core-2.8.6-javadoc.jar!/" />
     </JAVADOC>
-    <MATHEMATICA_LIBRARY />
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.8.6/jackson-core-2.8.6-sources.jar!/" />
     </SOURCES>
